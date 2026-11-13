@@ -6,7 +6,11 @@ Related discussion: https://github.com/renovatebot/renovate/discussions/45284
 
 When an artifact update has `pendingVersions` from `minimumReleaseAge`, the branch worker calls the generic single-file extractor. Bun only exports the bulk extractor, so this returns `null` and the worker emits `Could not re-extract the packageFile after updating it (package.json)`.
 
-This example has one public dependency and a real Bun-generated text lockfile. The generous minimum release age keeps pending releases available for normal hosted runs; registry-dependent behavior changes with time.
+This example has one public dependency and a real Bun-generated text lockfile. The `bump` range strategy is required: Bun bulk extraction has no lockedVersion, and `replace` would treat the highest matching release as the current version, yielding no update. `bump` starts from the lowest matching version 3.0.0; the generous minimum release age leaves both an eligible update and newer pending releases. Registry-dependent behavior changes with time.
+
+## Hosted reproduction
+
+Run Renovate against this repository using its `renovate.json`. As of 2026-11-13, real lookup returns an eligible update to Prettier 3.6.2 with manifest range `^3.6.2`, while 3.10.1 remains pending. Bun can resolve that range to 3.10.1. Unpatched Renovate then reaches the missing single-file extractor and emits the warning. The initial version of this reproduction used `replace` and did not trigger a hosted update; that configuration was corrected after testing the actual lookup code.
 
 ## Deterministic reproduction
 

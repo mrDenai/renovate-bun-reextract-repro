@@ -5,5 +5,5 @@
   ],
   "minimumReleaseAge": "365 days",
   "minimumReleaseAgeBehaviour": "timestamp-required",
-  "rangeStrategy": "replace"
+  "rangeStrategy": "bump"
 }
