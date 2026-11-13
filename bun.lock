@@ -1,0 +1,15 @@
+{
+  "lockfileVersion": 1,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "renovate-bun-reextract-reproduction",
+      "devDependencies": {
+        "prettier": "^3.0.0",
+      },
+    },
+  },
+  "packages": {
+    "prettier": ["prettier@3.0.0", "", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g=="],
+  }
+}

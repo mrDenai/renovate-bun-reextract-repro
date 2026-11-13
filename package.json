@@ -1,0 +1,7 @@
+{
+  "name": "renovate-bun-reextract-reproduction",
+  "private": true,
+  "devDependencies": {
+    "prettier": "^3.0.0"
+  }
+}
