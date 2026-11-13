@@ -5,11 +5,11 @@
     "": {
       "name": "renovate-bun-reextract-reproduction",
       "devDependencies": {
-        "prettier": "^3.0.0",
+        "prettier": "^3.6.2",
       },
     },
   },
   "packages": {
-    "prettier": ["prettier@3.0.0", "", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g=="],
+    "prettier": ["prettier@3.10.1", "", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-70vp3ZUYoPlFbF9uiTdXHUUCGEIp7d4+6p+8DYbkm2jP7x/3i/paXVF6dopSI3zd/CEitrZN1rc4i85xWmmXlg=="],
   }
 }
